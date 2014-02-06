@@ -5,6 +5,16 @@ $(document).ready(function() {
 	initializePage();
 })
 
+$(".friend a").click(changeName);
+
+function changeName(e){
+	e.preventDefault();
+
+	var name = $(this).text();
+	var anagram = anagrammedName(name);
+	$(this).text(anagram);
+}
+
 /*
  * Function that is called when the document is ready.
  */
@@ -43,4 +53,8 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+
+
+
+
 }
